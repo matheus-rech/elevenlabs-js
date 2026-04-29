@@ -28,7 +28,6 @@ export default {
             testMatch: ["<rootDir>/tests/unit/**/?(*.)+(browser).(spec|test).[jt]s?(x)"],
             setupFilesAfterEnv: [],
         },
-        ,
         {
             displayName: "wire",
             transform: {

@@ -1,11 +1,12 @@
 /** @type {import('jest').Config} */
 export default {
-    preset: "ts-jest",
     testEnvironment: "node",
     projects: [
         {
             displayName: "unit",
-            preset: "ts-jest",
+            transform: {
+                "^.+\\.tsx?$": ["ts-jest", { tsconfig: "tsconfig.test.json" }],
+            },
             testEnvironment: "node",
             moduleNameMapper: {
                 "^(\.{1,2}/.*)\.js$": "$1",
@@ -16,7 +17,9 @@ export default {
         },
         {
             displayName: "browser",
-            preset: "ts-jest",
+            transform: {
+                "^.+\\.tsx?$": ["ts-jest", { tsconfig: "tsconfig.test.json" }],
+            },
             testEnvironment: "<rootDir>/tests/BrowserTestEnvironment.ts",
             moduleNameMapper: {
                 "^(\.{1,2}/.*)\.js$": "$1",
@@ -25,10 +28,11 @@ export default {
             testMatch: ["<rootDir>/tests/unit/**/?(*.)+(browser).(spec|test).[jt]s?(x)"],
             setupFilesAfterEnv: [],
         },
-        ,
         {
             displayName: "wire",
-            preset: "ts-jest",
+            transform: {
+                "^.+\\.tsx?$": ["ts-jest", { tsconfig: "tsconfig.test.json" }],
+            },
             testEnvironment: "node",
             moduleNameMapper: {
                 "^(\.{1,2}/.*)\.js$": "$1",

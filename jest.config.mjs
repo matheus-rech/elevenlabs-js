@@ -17,7 +17,9 @@ export default {
         },
         {
             displayName: "browser",
-            preset: "ts-jest",
+            transform: {
+                "^.+\\.tsx?$": ["ts-jest", { tsconfig: "tsconfig.test.json" }],
+            },
             testEnvironment: "<rootDir>/tests/BrowserTestEnvironment.ts",
             moduleNameMapper: {
                 "^(\.{1,2}/.*)\.js$": "$1",

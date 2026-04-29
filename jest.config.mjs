@@ -1,6 +1,8 @@
 /** @type {import('jest').Config} */
 export default {
-    preset: "ts-jest",
+    transform: {
+    "^.+\\.tsx?$": ["ts-jest", { tsconfig: "tsconfig.test.json" }]
+  },
     testEnvironment: "node",
     projects: [
         {
